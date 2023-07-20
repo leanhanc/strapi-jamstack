@@ -3,11 +3,12 @@ name: strapi-jamstack-backend
 services:
   strapi:
     container_name: strapi
-    image: strapi:latest
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
     restart: unless-stopped
     env_file: .env
     environment:
-      ENV_PATH: /env.local
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
       DATABASE_PORT: ${DATABASE_PORT}

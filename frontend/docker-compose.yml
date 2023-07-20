@@ -4,8 +4,7 @@ name: strapi-jamstack-frontend
 services:
   nextjs:
     env_file: .env.production
-    container_name: nextjs 
-   # network_mode: "host"
+    container_name: nextjs
     build:
       context: .
       dockerfile: Dockerfile
